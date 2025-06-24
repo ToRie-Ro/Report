@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>REPORT</title>
+  <link rel="icon" type="image/png" href="image/B.png">
+  <link rel="icon" type="image/x-icon" href="image/B.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      background-color: #121212;
+      color: #fff;
+    }
+
+    header {
+      background-color: #1c1c1c;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.4rem;
+      color: #00ff00;
+      font-weight: bold;
+    }
+
+    .logo img {
+      border-radius: 12px;
+      width: 32px;
+      height: 32px;
+    }
+
+    .menu-toggle {
+      font-size: 1.5rem;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #1c1c1c;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-top: 1px solid #333;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2a2a2a;
+    }
+
+    .menu-open nav {
+      display: flex;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #ffffff;
+      text-shadow: 2px 2px #000;
+      margin: 30px 20px 10px;
+    }
+
+    .shop-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .rank-card {
+      background: #1f1f1f;
+      border: 3px solid #444;
+      border-radius: 12px;
+      padding: 20px;
+      width: 260px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .rank-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00ff00;
+    }
+
+    .rank-image {
+      border-radius: 12px;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+      object-fit: contain;
+    }
+
+    .rank-name {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .rank-price {
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    .buy-button {
+      background: linear-gradient(to bottom, #59A329, #4C8B2B);
+      color: white;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: 2px solid #1a1a1a;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px #2d4723;
+      transition: background 0.3s ease;
+    }
+
+    .buy-button:hover {
+      background: linear-gradient(to bottom, #6BBF3D, #4C8B2B);
+    }
+
+    .badge {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: red;
+      color: rgb(255, 255, 255);
+      font-size: 0.9rem;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transform: rotate(10deg);
+    }
+
+    footer {
+      margin: 40px auto;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      padding: 20px;
+    }
+
+    .social-btn {
+      background: linear-gradient(to bottom, #59A329, #4C8B2B);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      border: 2px solid #1a1a1a;
+      box-shadow: 0 4px #2d4723;
+      transition: background 0.3s;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 40px; /* space between image and body content */
+    }
+
+    .image-container img {
+      width: 300px; /* adjust size as needed */
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .social-btn:hover {
+      background: linear-gradient(to bottom, #6BBF3D, #4C8B2B);
+    }
+
+    @media(min-width: 600px) {
+      nav {
+        display: flex !important;
+        flex-direction: row;
+        gap: 20px;
+        background: none;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      nav a {
+        border: none;
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="image/B.png" alt="Logo" />
+    </div>
+    <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    <nav>
+      <a href="Minecraftstore.html">Home</a>
+      <a href="Report.html">Report</a>
+      <a href="Credit.html">Credit</a>
+    </nav>
+  </header>
+
+  <div class="image-container">
+    <img src="image/BLUEMC.png" alt="Store Banner">
+  </div>
+
+  <h1>REPORT</h1>
+
+  <!-- IP Box -->
+  <div style="text-align: center; margin: 20px;">
+    <label for="server-ip" style="font-size: 1.2rem; margin-bottom: 8px; display: block;"></label>
+    <div style="display: inline-flex; align-items: center; gap: 10px;">
+      <input type="text" id="server-ip" value="bluemc.com" readonly
+        style="padding: 10px 15px; font-size: 1rem; border-radius: 6px; border: 3px solid #ffffff; background-color: #1a1a1a; color: #ffffff; text-align: center; width: 260px; font-family: monospace;"
+        onclick="this.select();" />
+      <button onclick="copyIP()" style="padding: 10px 15px; background: #59A329; border: none; border-radius: 6px; color: white; cursor: pointer; font-weight: bold; box-shadow: 0 4px #2d4723;">Copy</button>
+    </div>
+  </div>
+
+  <!-- Shop Section -->
+  <div class="shop-container">
+    <div class="rank-card">
+      <div class="badge">NEWS</div>
+      <img src="image/rankreport.png" class="rank-image" alt="Diamond" />
+      <div class="rank-name">RANK REPORT</div>
+      <div class="rank-price">អ្នកដែលមាន Rank ទិញហើយអត់ឃើញ</div>
+      <button class="buy-button">REPORT</button>
+    </div>
+
+    <div class="rank-card">
+      <div class="badge">NEWS</div>
+      <img src="image/Hacker.png" class="rank-image" alt="Silver" />
+      <div class="rank-name">HACKER</div>
+      <div class="rank-price">អ្នកដែលរត់លឿន PVP បានឆ្ញាយ</div>
+      <button class="buy-button">REPORT</button>
+    </div>
+
+    <div class="rank-card">
+      <div class="badge">NEWS</div>
+      <img src="image/bugserver.png" class="rank-image" alt="Bronze" />
+      <div class="rank-name">BUG SERVER</div>
+      <div class="rank-price">Server មានការ Error</div>
+      <button class="buy-button">REPORT</button>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <h2 style="color: #ffffff; margin-bottom: 10px;">Contact Us:</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px;">
+      <a href="https://youtube.com" target="_blank" class="social-btn">YouTube</a>
+      <a href="https://tiktok.com" target="_blank" class="social-btn">TikTok</a>
+      <a href="https://discord.com" target="_blank" class="social-btn">Discord</a>
+      <a href="https://facebook.com" target="_blank" class="social-btn">Facebook</a>
+      <a href="https://t.me/bluemczz" target="_blank" class="social-btn">Telegram</a>
+    </div>
+    &copy; 2025 BLUE MC.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function copyIP() {
+      const ipInput = document.getElementById("server-ip");
+      ipInput.select();
+      ipInput.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("IP copied: " + ipInput.value);
+    }
+  </script>
+
+</body>
+</html>
